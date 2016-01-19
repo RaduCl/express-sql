@@ -8,7 +8,7 @@ exports.setup = function setup(app, conf){
             database : conf.db.mysql.database
         });
 
-    app.configure(function(){
+    app.set(function(){
         conf.application.middleware.forEach(function(val){
             app.use(express[val]());
         });
